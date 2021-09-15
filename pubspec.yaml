@@ -1,0 +1,53 @@
+#arquivos de configuração do projeto em geral
+name: aula3 #nome do pacote
+description: Triha flutter use academy.
+publish_to: 'none' # caso vc crie um pacote puev
+version: 1.0.0+1 #build do aplicativo
+environment:
+  sdk: ">=2.12.0 <3.0.0" # versão do dart 
+dependencies:  #DEpendencias do projetos.... Para loja. dependencias que precisa para depois de build
+  flutter:
+    sdk: flutter
+  google_fonts: ^2.1.0
+  #cupertino_icons: ^1.0.2 // Não vai usar
+
+dev_dependencies:     #enquanto estou desenvolvendo boas práticas
+  flutter_test:
+    sdk: flutter
+ 
+  flutter_lints: ^1.0.0  #analisa código olha os erros,  padrodização do código
+
+flutter:
+ 
+  uses-material-design: true
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
