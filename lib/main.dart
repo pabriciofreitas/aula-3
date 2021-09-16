@@ -1,3 +1,4 @@
+import 'package:aula3/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override //build: método responsavel por reconstruir a tela
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Use Academy',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -23,91 +24,101 @@ class MyApp extends StatelessWidget {
       //supportedLocales: ,//lista de locale
       //shortcuts: ,//atalhos
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          //elevation: 0, // sobrar
-          /*flexibleSpace: Container(
-            height: 10,
-            color: Colors.red,
-          ),*/
-          //title:align(alignment:aling.center)
-          title: const Text("Use acamdemy"),
-          centerTitle: true,
-          //titleSpacing: ,
-          actions: const [
-            Padding(
-              padding: EdgeInsets.only(right: 12),
-              child: Icon(Icons.book),
-            )
-          ],
-          shape: const RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.vertical(bottom: Radius.circular(12.0))),
-          // leading: const Icon(Icons.book),
-        ),
+      home: const HomePage(),
+    );
+  }
+}
 
-        //
-        drawer: Drawer(
-          child: Column(),
-        ),
-        //
-        backgroundColor: const Color(0xFFFFFFFF),
-        //extedboby extende tamanho do body
+class TestPage extends StatelessWidget {
+  const TestPage({
+    Key? key,
+  }) : super(key: key);
 
-        body: SafeArea(
-          child: Column(
-            //mainAxisSize: , //tamanho máximo possivel
-            mainAxisAlignment: MainAxisAlignment
-                .spaceEvenly, //vertical space around.espaço dispomnive , evenlu
-            // crossAxisAlignment:
-            //   CrossAxisAlignment.stretch, //prencher hozizontal  //horizontal
-            //verticalDirection: VerticalDirection.up,//começa coluna de baixo
-            children: const [
-              MyContainer(),
-              MyContainer(),
-              MyContainer(),
-            ],
-          ),
-        ),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        //elevation: 0, // sobrar
+        /*flexibleSpace: Container(
+          height: 10,
+          color: Colors.red,
+        ),*/
+        //title:align(alignment:aling.center)
+        title: const Text("Use acamdemy"),
+        centerTitle: true,
+        //titleSpacing: ,
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 12),
+            child: Icon(Icons.book),
+          )
+        ],
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(12.0))),
+        // leading: const Icon(Icons.book),
+      ),
 
-        //extendBodyBehindAppBar: , persistir botão mesmo se trocar de tela
+      //
+      drawer: Drawer(
+        child: Column(),
+      ),
+      //
+      backgroundColor: const Color(0xFFFFFFFF),
+      //extedboby extende tamanho do body
 
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.grey[200],
-          selectedItemColor: Colors.blue,
-          selectedLabelStyle: const TextStyle(
-            color: Colors.white,
-          ),
-          unselectedLabelStyle: TextStyle(
-            color: Colors.blue[100],
-          ),
-          //showSelectedLabels: true,
-          //debugPrint
-          onTap: (value) => debugPrint(value.toString()),
-          items: const [
-            BottomNavigationBarItem(
-              label: "Inicio",
-              icon: Icon(
-                Icons.home_outlined,
-                //color: Colors.white,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: "Perfil",
-              icon: Icon(
-                Icons.person_outline_rounded,
-                //color: Colors.white,
-              ),
-            ),
-            BottomNavigationBarItem(
-              label: "shop",
-              icon: Icon(
-                Icons.shopping_bag_outlined,
-                //color: Colors.white,
-              ),
-            ),
+      body: SafeArea(
+        child: Column(
+          //mainAxisSize: , //tamanho máximo possivel
+          mainAxisAlignment: MainAxisAlignment
+              .spaceEvenly, //vertical space around.espaço dispomnive , evenlu
+          // crossAxisAlignment:
+          //   CrossAxisAlignment.stretch, //prencher hozizontal  //horizontal
+          //verticalDirection: VerticalDirection.up,//começa coluna de baixo
+          children: const [
+            MyContainer(),
+            MyContainer(),
+            MyContainer(),
           ],
         ),
+      ),
+
+      //extendBodyBehindAppBar: , persistir botão mesmo se trocar de tela
+
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[200],
+        selectedItemColor: Colors.blue,
+        selectedLabelStyle: const TextStyle(
+          color: Colors.white,
+        ),
+        unselectedLabelStyle: TextStyle(
+          color: Colors.blue[100],
+        ),
+        //showSelectedLabels: true,
+        //debugPrint
+        onTap: (value) => debugPrint(value.toString()),
+        items: const [
+          BottomNavigationBarItem(
+            label: "Inicio",
+            icon: Icon(
+              Icons.home_outlined,
+              //color: Colors.white,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "Perfil",
+            icon: Icon(
+              Icons.person_outline_rounded,
+              //color: Colors.white,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: "shop",
+            icon: Icon(
+              Icons.shopping_bag_outlined,
+              //color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
