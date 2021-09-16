@@ -24,9 +24,29 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          //elevation: 0, // sobrar
+          flexibleSpace: Container(
+            height: 30,
+            color: Colors.red,
+          ),
           title: const Text("Use acamdemy"),
           centerTitle: true,
           //titleSpacing: ,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 12),
+              child: Icon(Icons.book),
+            )
+          ],
+          shape: const RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.vertical(bottom: Radius.circular(12.0))),
+          // leading: const Icon(Icons.menu),
+        ),
+
+        //
+        drawer: Drawer(
+          child: Column(),
         ),
         //
         backgroundColor: const Color(0xFFFFFFFF),
@@ -41,8 +61,9 @@ class MyApp extends StatelessWidget {
           unselectedLabelStyle: TextStyle(
             color: Colors.blue[100],
           ),
-          showSelectedLabels: true,
-          onTap: (value) => debugPrint(value.toString()),
+          //showSelectedLabels: true,
+          //debugPrint
+          onTap: (value) => print(value),
           items: [
             BottomNavigationBarItem(
               label: "Inicio",
