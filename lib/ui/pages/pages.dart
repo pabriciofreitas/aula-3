@@ -1,0 +1,1 @@
+export 'home_page.dart';// para importa apenas um vez
