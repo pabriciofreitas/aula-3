@@ -20,6 +20,8 @@ dev_dependencies:     #enquanto estou desenvolvendo boas práticas
 flutter:
  
   uses-material-design: true
+  assets:
+    - lib/assets/images/
 
   
   
