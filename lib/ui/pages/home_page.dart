@@ -8,17 +8,18 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          height: MediaQuery.of(context)
-              .size
-              .height, //resolução da tela, mmidia da telea
           decoration: BoxDecoration(
             color: Colors.blue,
-            image: DecorationImage(
-              image: Image.asset('lib/assets/images/image01.jpg').image,
-              fit: BoxFit.cover,
+          ),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: 100,
+              maxHeight: 200,
+              minWidth: 150,
+              maxWidth: 300,
             ),
-          ), //image. memory banco de daods convertico em int
-          // child: ,
+            child: Column(children: const [Text("Teste ConstraindBox")]),
+          ),
         ),
       ),
     );
