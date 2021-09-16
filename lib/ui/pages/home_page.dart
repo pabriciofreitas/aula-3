@@ -6,37 +6,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SizedBox.expand(
-          child: Container(
-            color: Colors.blue,
-            child: Column(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    color: Colors.green,
-                  ),
-                ),
-                Flexible(
-                  flex: 2,
-                  fit: FlexFit.tight,
-                  child: Container(
-                    color: Colors.amber,
-                    child: Text("feste"),
-                  ),
-                ), //flexivel diacordo seu filho
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    color: Colors.red,
-                  ),
-                ),
-              ],
+        body: SafeArea(
+      child: SizedBox.expand(
+        child: Container(
+          color: Colors.blue,
+          child: Transform.translate(
+            //.translate
+            //para rotacionar os componentes
+            //transform: ,
+            // transform: , //mudando pesctiva da imagem 3d
+            offset: Offset(22, 60),
+            child: Container(
+              color: Colors.red,
             ),
           ),
         ),
       ),
-    );
+    ));
   }
 }
