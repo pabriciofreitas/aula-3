@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  @override //método responsavel por reconstruir a tela
+  @override //build: método responsavel por reconstruir a tela
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           //elevation: 0, // sobrar
-          flexibleSpace: Container(
-            height: 30,
+          /*flexibleSpace: Container(
+            height: 10,
             color: Colors.red,
-          ),
+          ),*/
           //title:align(alignment:aling.center)
           title: const Text("Use acamdemy"),
           centerTitle: true,
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           shape: const RoundedRectangleBorder(
               borderRadius:
                   BorderRadius.vertical(bottom: Radius.circular(12.0))),
-          // leading: const Icon(Icons.menu),
+          // leading: const Icon(Icons.book),
         ),
 
         //
@@ -58,11 +58,11 @@ class MyApp extends StatelessWidget {
           child: Column(
             //mainAxisSize: , //tamanho máximo possivel
             mainAxisAlignment: MainAxisAlignment
-                .center, //vertical space around.espaço dispomnive , evenlu
+                .spaceEvenly, //vertical space around.espaço dispomnive , evenlu
             // crossAxisAlignment:
             //   CrossAxisAlignment.stretch, //prencher hozizontal  //horizontal
             //verticalDirection: VerticalDirection.up,//começa coluna de baixo
-            children: [
+            children: const [
               MyContainer(),
               MyContainer(),
               MyContainer(),
@@ -83,8 +83,8 @@ class MyApp extends StatelessWidget {
           ),
           //showSelectedLabels: true,
           //debugPrint
-          onTap: (value) => print(value),
-          items: [
+          onTap: (value) => debugPrint(value.toString()),
+          items: const [
             BottomNavigationBarItem(
               label: "Inicio",
               icon: Icon(
@@ -93,7 +93,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             BottomNavigationBarItem(
-              label: "Person",
+              label: "Perfil",
               icon: Icon(
                 Icons.person_outline_rounded,
                 //color: Colors.white,
@@ -134,7 +134,7 @@ class MyContainer extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.blue.withOpacity(0.4),
-            offset: Offset(4.0, 4.0),
+            offset: const Offset(4.0, 4.0),
             blurRadius: 6,
           ),
         ],
@@ -143,10 +143,10 @@ class MyContainer extends StatelessWidget {
       ),
       child: Row(//mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-        const Icon(Icons.home),
+        const FlutterLogo(),
         Expanded(
           child: Text(
-            "Meu containerffdsfdssfsdfdsfsd",
+            "Meu Container testando o texto overflow",
             maxLines: 2,
             overflow: TextOverflow
                 .ellipsis, //casp texto seja maior poem 3 pontos de continuo
@@ -154,15 +154,18 @@ class MyContainer extends StatelessWidget {
             textAlign: TextAlign.center,
             //textScaleFactor: 1.0, almentar fonte do texto // se não aumenta no systema operacional n mexe com esse coisa // no material tem isso
             style: GoogleFonts.poppins(
-                fontSize: 50,
-                fontWeight: FontWeight.w400,
-                color: Colors.white,
-                decoration: TextDecoration.lineThrough, //linha notextp
-                //decorationStyle: TextDecorationStyle.dashed
-                letterSpacing: 2.0),
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+              color: Colors.white,
+              //decoration: TextDecoration.lineThrough, //linha notextp
+              //decorationStyle: TextDecorationStyle.dashed
+              letterSpacing: 2.0, // espaçamento entre as letras
+              //shadows: //sobrar no texto
+            ),
           ),
+          //FlutterLogo()
         ),
-        const Icon(Icons.home),
+        const FlutterLogo(),
       ]),
     );
   }
