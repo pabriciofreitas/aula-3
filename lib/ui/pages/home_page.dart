@@ -8,26 +8,30 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
       child: Container(
+        height: 200,
         color: Colors.white,
-        child: LayoutBuilder(
-            //Para defenir se é celular ou tablet ou pc // pq da row que n faz
-            builder: (context, constrainst) => Row(children: [
-                  Container(
-                    child: LayoutBuilder(
-                      builder: (context, constrainst2) => Container(
-                        width: constrainst2.maxWidth * 0.5,
-                      ),
-                    ),
-                    color: Colors.red,
-                    width: constrainst.maxWidth *
-                        0.7, //pegando altura máxima width: constrainst.maxWidth * 0.1,
-                  ),
-                  Container(
-                    color: Colors.green,
-                    width: constrainst.maxWidth *
-                        0.3, //pegando altura máxima width: constrainst.maxWidth * 0.1,
-                  ),
-                ])),
+        child: ListView.separated(
+          physics: const BouncingScrollPhysics(),
+          //reverse: true,
+          scrollDirection: Axis.horizontal,
+
+          itemBuilder: (context, index) {
+            final String text = "Item ${index + 1}";
+            final String date = DateTime.now().day.toString();
+            return Container(
+              color: Colors.black,
+              height: 200,
+              child: Text(
+                "$text - $date",
+                style: TextStyle(color: Colors.white),
+              ),
+            );
+          },
+          separatorBuilder: (context, index) => const SizedBox(
+            height: 16,
+          ),
+          itemCount: 10,
+        ),
       ),
     ));
   }
