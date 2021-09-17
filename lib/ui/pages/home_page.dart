@@ -7,30 +7,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Container(
-        height: 200,
-        color: Colors.white,
+      child: SizedBox.expand(
         child: ListView.separated(
-          physics: const BouncingScrollPhysics(),
-          //reverse: true,
-          scrollDirection: Axis.horizontal,
-
-          itemBuilder: (context, index) {
-            final String text = "Item ${index + 1}";
-            final String date = DateTime.now().day.toString();
-            return Container(
-              color: Colors.black,
-              height: 200,
-              child: Text(
-                "$text - $date",
-                style: TextStyle(color: Colors.white),
-              ),
-            );
-          },
-          separatorBuilder: (context, index) => const SizedBox(
-            height: 16,
+          itemBuilder: (context, index) => ListTile(
+            title: Text("Titulo"),
+            subtitle: Text("subTitulo"),
+            leading: CircleAvatar(
+              // backgroundColor: Colors.blue,
+              child: Text("T"),
+              backgroundImage:
+                  Image.asset("lib/assets/images/image01.jpg").image,
+              //onBackgroundImageError: , //caso a imagem der erro
+              //foregroundColor: , a foto por cima
+            ),
+            //trailing: InkWell(
+            //  onTap: () => debugPrint("on tap $index"),
+            //  child: Icon(Icons
+            //     .edit_outlined)), //depois do tituilo iconButton===MAIs completo
+            //enabled: ,se usaario consegue interagir com usuario
+            tileColor: Colors.blue[200],
+            //horizontalTitleGap: 32, espaçamento
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+            onTap: () => debugPrint("on tap $index"),
           ),
-          itemCount: 10,
+          separatorBuilder: (context, index) => const SizedBox(
+            height: 20,
+          ),
+          itemCount: 20,
         ),
       ),
     ));
