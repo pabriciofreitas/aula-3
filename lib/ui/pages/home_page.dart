@@ -6,44 +6,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButtonLocation:
-            FloatingActionButtonLocation.centerFloat, //localixação do button
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          //heroTag: ,
-          //isExtended: ,//expandirr botãspo
-          splashColor: Colors.red[400], //cor enquando segura
-          child: Icon(Icons.add),
-          backgroundColor: Colors.red,
-        ),
         body: SafeArea(
-          child: SizedBox.expand(
-            child: Container(
-              color: Colors.white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12)),
-                        primary: Colors.red,
-                        onPrimary: Colors.white,
-                        padding:
-                            EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                      ),
-                      onLongPress: () => debugPrint("Pessionou e segurous"),
-                      onPressed: () => debugPrint("elevationButton onPress"),
-                      child: Text("elevationButton")),
-                  OutlinedButton(
-                      //trocar a bordar
-                      onPressed: () {},
-                      child: Text("outlinedbutton")),
-                  TextButton(onPressed: () {}, child: Text("textbutton"))
-                ],
-              ),
+      child: SizedBox.expand(
+        child: Container(
+          color: Colors.white,
+          child: GridView.builder(
+            //itemCount: , //número de intens no máximo
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
+            //addAutomaticKeepAlives: , matem os widgis criado
+            physics: const BouncingScrollPhysics(), // controlar o scroll
+            itemBuilder: (context, index) => Container(
+              color: Colors.lightGreen,
+              height: 200,
             ),
           ),
-        ));
+        ),
+      ),
+    ));
   }
 }
