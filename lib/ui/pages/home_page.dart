@@ -10,16 +10,26 @@ class HomePage extends StatelessWidget {
       child: SizedBox.expand(
         child: Container(
           color: Colors.white,
-          child: GridView.builder(
-            //itemCount: , //número de intens no máximo
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 16, mainAxisSpacing: 16),
-            //addAutomaticKeepAlives: , matem os widgis criado
-            physics: const BouncingScrollPhysics(), // controlar o scroll
-            itemBuilder: (context, index) => Container(
-              color: Colors.lightGreen,
-              height: 200,
-            ),
+          child: IndexedStack(
+            alignment: Alignment.center,
+            index: 0,
+            children: [
+              Container(
+                height: 400,
+                width: 300,
+                color: Colors.red,
+              ),
+              Container(
+                height: 400,
+                width: 300,
+                color: Colors.green,
+              ),
+              Container(
+                height: 400,
+                width: 300,
+                color: Colors.amber,
+              )
+            ],
           ),
         ),
       ),
