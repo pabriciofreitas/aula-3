@@ -1,6 +1,7 @@
-import 'package:aula3/ui/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'ui/pages/pages.dart';
 
 void main() {
   runApp(const MyApp());

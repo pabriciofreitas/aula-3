@@ -2,7 +2,7 @@
 name: aula3 #nome do pacote
 description: Triha flutter use academy.
 publish_to: 'none' # caso vc crie um pacote puev
-version: 1.0.0+1 #build do aplicativo
+version: 1.0.0+1 #build do aplicativo 1 MUDANÇA BRUSCA  2 FEAT  3 BUG
 environment:
   sdk: ">=2.12.0 <3.0.0" # versão do dart 
 dependencies:  #DEpendencias do projetos.... Para loja. dependencias que precisa para depois de build
